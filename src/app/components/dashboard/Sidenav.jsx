@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import AccessibleIcon from "@mui/icons-material/Accessible";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 import {
   Analytics,
   ArrowDownward,
@@ -19,25 +21,28 @@ import {
 import { FormGroup } from "@mui/material";
 function Sidenav() {
   return (
-    <div className="w-64 bg-gray-100/50 min-h-screen fixed pt-6 space-y-4 text-sm">
+    <div className="w-64 bg-gray-100/50 min-h-screen fixed pt-6 text-sm">
       <div className="text-sm text-center px-6">
-        <div className="flex gap-4 items-center pt-4 opacity-70 font-bold">
-          <LocationCity />
-          <p> Office Location</p>
-        </div>
+        <Link
+          href="/user/admin"
+          className="flex  gap-4 items-center pt-4 opacity-70 font-bold "
+        >
+          <DashboardIcon />
+          <p>Dashboard</p>
+        </Link>
       </div>
       <div className="flex flex-col gap-y-4">
         <Link
-          href="/user/admin/account"
-          className="text-sm text-center flex justify-between items-center opacity-75 font-bold px-6"
+          href="/user/admin/patientmanagement"
+          className="text-sm text-center flex justify-between items-center opacity-75 font-bold px-6 py-2 hover:bg-gray-200"
         >
           <div className="flex justify-between items-center gap-x-3.5">
-            <Settings />
-            <p>Account</p>
+            <AccessibleIcon />
+            <p>Patient Management</p>
           </div>
-          <KeyboardArrowDown className="opacity-80 font-bold" />
+          {/* <KeyboardArrowDown className="opacity-80 font-bold" /> */}
         </Link>
-        <Link
+        {/* <Link
           href="/user/admin/messaging"
           className="text-sm text-center flex justify-between items-center opacity-75 font-bold px-6"
         >
@@ -126,7 +131,7 @@ function Sidenav() {
             <p>Fax</p>
           </div>
           <KeyboardArrowDown className="opacity-80 font-bold" />
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
